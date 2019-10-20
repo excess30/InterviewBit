@@ -1,0 +1,14 @@
+vector<int> Solution::getRow(int A) 
+{
+    int i,pos;
+    vector<int> res={1};
+    for(i=1;i<=A;i++)
+    {
+        for(pos=res.size()-1;pos>0;pos--)
+        {
+           res[pos]+=res[pos-1];
+        }
+        res.push_back(1);
+    }
+    return res;
+}
